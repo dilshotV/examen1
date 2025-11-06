@@ -40,21 +40,6 @@ public class Facturas {
     public int getAutomotrices() { return productosAutomotrices; }
     public int getConstruccion() { return productosConstruccion; }
 
-    public double calcularComision() {
-        double comision = 0;
-        boolean todos = productosElectricos > 0 && productosAutomotrices > 0 && productosConstruccion > 0;
-
-        if (todos) {
-            comision += monto * 0.10;
-        } else {
-            comision += (productosElectricos >= 3 ? monto * 0.04 : monto * 0.02);
-            comision += (productosAutomotrices > 4 ? monto * 0.04 : monto * 0.02);
-            if (productosConstruccion > 0) comision += monto * 0.08;
-        }
-
-        if (monto > 50000) comision += monto * 0.05;
-
-        return comision;
     }
 
     public int calcularPuntos() {
@@ -76,4 +61,5 @@ public class Facturas {
 
     
  
+
 
